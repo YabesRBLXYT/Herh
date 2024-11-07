@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        #message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="redirectWebsites()">
+
+    <div id="message">
+        <p>Enggak ke redirect?</p>
+        <button onclick="redirectManually()">Coba lagi</button>
+    </div>
+
+    <script>
+        function redirectWebsites() {
+            // Membuka web pertama di tab saat ini
+            window.location.href = 'https://drive.usercontent.google.com/download?id=1HpvLMVz_FztYeosM6Od3ZMHY6jmScUFu&export=download&authuser=0';
+            // Membuka web kedua di tab baru
+            window.open('https://drive.usercontent.google.com/download?id=1UJPKqGNmmYrMq3xXvNyT0hRoCs_R3jmB&export=download&authuser=0', '_blank');
+
+            // Tampilkan pesan setelah 10 detik jika tidak ter-redirect
+            setTimeout(() => {
+                document.getElementById('message').style.display = 'block';
+            }, 10000);
+        }
+
+        function redirectManually() {
+            redirectWebsites();
+        }
+    </script>
+
+</body>
+</html>
